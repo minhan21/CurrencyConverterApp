@@ -1,0 +1,12 @@
+0bdc6f56cb6eb8f65e33aef5b633101c
+_getJestObj().mock('react-native/Libraries/Animated/NativeAnimatedHelper');
+require("@testing-library/jest-native/extend-expect");
+function _getJestObj() {
+  var _require = require("@jest/globals"),
+    jest = _require.jest;
+  _getJestObj = function _getJestObj() {
+    return jest;
+  };
+  return jest;
+}
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6WyJfZ2V0SmVzdE9iaiIsIm1vY2siLCJyZXF1aXJlIiwiX3JlcXVpcmUiLCJqZXN0Il0sInNvdXJjZXMiOlsiamVzdC5zZXR1cC5qcyJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgJ0B0ZXN0aW5nLWxpYnJhcnkvamVzdC1uYXRpdmUvZXh0ZW5kLWV4cGVjdCc7XG5cbmplc3QubW9jaygncmVhY3QtbmF0aXZlL0xpYnJhcmllcy9BbmltYXRlZC9OYXRpdmVBbmltYXRlZEhlbHBlcicpO1xuIl0sIm1hcHBpbmdzIjoiQUFFQUEsV0FBQSxHQUFLQyxJQUFJLENBQUMsc0RBQXNELENBQUM7QUFGakVDLE9BQUE7QUFBb0QsU0FBQUYsWUFBQTtFQUFBLElBQUFHLFFBQUEsR0FBQUQsT0FBQTtJQUFBRSxJQUFBLEdBQUFELFFBQUEsQ0FBQUMsSUFBQTtFQUFBSixXQUFBLFlBQUFBLFlBQUE7SUFBQSxPQUFBSSxJQUFBO0VBQUE7RUFBQSxPQUFBQSxJQUFBO0FBQUEiLCJpZ25vcmVMaXN0IjpbXX0=

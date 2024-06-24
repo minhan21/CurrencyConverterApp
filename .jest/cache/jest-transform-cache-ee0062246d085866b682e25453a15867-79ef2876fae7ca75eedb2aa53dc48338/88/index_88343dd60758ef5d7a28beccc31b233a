@@ -1,0 +1,9 @@
+67c8e9b907e035e9585168d453f72dbd
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.roundToTwoDecimals = void 0;
+const roundToTwoDecimals = (num) => {
+    return Math.round(num * 100) / 100;
+};
+exports.roundToTwoDecimals = roundToTwoDecimals;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJmaWxlIjoiL1VzZXJzL2FudHJhbi9EZXNrdG9wL0N1cnJlbmN5Q29udmVydGVyQXBwL3NyYy91dGlscy9pbmRleC50cyIsIm1hcHBpbmdzIjoiOzs7QUFBTyxNQUFNLGtCQUFrQixHQUFHLENBQUMsR0FBVyxFQUFVLEVBQUU7SUFDeEQsT0FBTyxJQUFJLENBQUMsS0FBSyxDQUFDLEdBQUcsR0FBRyxHQUFHLENBQUMsR0FBRyxHQUFHLENBQUM7QUFDckMsQ0FBQyxDQUFDO0FBRlcsUUFBQSxrQkFBa0Isc0JBRTdCIiwibmFtZXMiOltdLCJzb3VyY2VzIjpbIi9Vc2Vycy9hbnRyYW4vRGVza3RvcC9DdXJyZW5jeUNvbnZlcnRlckFwcC9zcmMvdXRpbHMvaW5kZXgudHMiXSwic291cmNlc0NvbnRlbnQiOlsiZXhwb3J0IGNvbnN0IHJvdW5kVG9Ud29EZWNpbWFscyA9IChudW06IG51bWJlcik6IG51bWJlciA9PiB7XG4gIHJldHVybiBNYXRoLnJvdW5kKG51bSAqIDEwMCkgLyAxMDA7XG59O1xuIl0sInZlcnNpb24iOjN9

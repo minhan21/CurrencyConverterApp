@@ -1,0 +1,33 @@
+fb85791f82a186d9aa83c22764fc2841
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+// src/__tests__/ExchangeRates.test.tsx
+const react_1 = __importDefault(require("react"));
+const react_native_1 = require("@testing-library/react-native");
+const ExchangeRates_1 = __importDefault(require("../components/ExchangeRates"));
+const RateContext_1 = require("../context/RateContext");
+test('renders exchange rates', async () => {
+    const rates = { USD: 1, EUR: 0.85 };
+    const { getByText } = (0, react_native_1.render)(react_1.default.createElement(RateContext_1.RateProvider, null,
+        react_1.default.createElement(ExchangeRates_1.default, { baseCurrency: "USD" })));
+    await (0, react_native_1.waitFor)(() => expect(getByText('EUR')).toBeTruthy());
+    await (0, react_native_1.waitFor)(() => expect(getByText('0.85')).toBeTruthy());
+});
+test('displays error message on error', async () => {
+    jest.mock('../hooks/useFetchRates', () => ({
+        __esModule: true,
+        default: jest.fn(() => ({
+            rates: {},
+            loading: false,
+            error: 'Failed to fetch exchange rates',
+            refetch: jest.fn(),
+        })),
+    }));
+    const { getByText } = (0, react_native_1.render)(react_1.default.createElement(RateContext_1.RateProvider, null,
+        react_1.default.createElement(ExchangeRates_1.default, { baseCurrency: "USD" })));
+    await (0, react_native_1.waitFor)(() => expect(getByText('Failed to fetch exchange rates')).toBeTruthy());
+});
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJmaWxlIjoiL1VzZXJzL2FudHJhbi9EZXNrdG9wL0N1cnJlbmN5Q29udmVydGVyQXBwL3NyYy9fX3Rlc3RzX18vRXhjaGFuZ2VSYXRlcy50ZXN0LnRzeCIsIm1hcHBpbmdzIjoiOzs7OztBQUFBLHVDQUF1QztBQUN2QyxrREFBMEI7QUFDMUIsZ0VBQWdFO0FBQ2hFLGdGQUF3RDtBQUN4RCx3REFBc0Q7QUFFdEQsSUFBSSxDQUFDLHdCQUF3QixFQUFFLEtBQUssSUFBSSxFQUFFO0lBQ3hDLE1BQU0sS0FBSyxHQUFHLEVBQUUsR0FBRyxFQUFFLENBQUMsRUFBRSxHQUFHLEVBQUUsSUFBSSxFQUFFLENBQUM7SUFDcEMsTUFBTSxFQUFFLFNBQVMsRUFBRSxHQUFHLElBQUEscUJBQU0sRUFDMUIsOEJBQUMsMEJBQVk7UUFDWCw4QkFBQyx1QkFBYSxJQUFDLFlBQVksRUFBQyxLQUFLLEdBQUcsQ0FDdkIsQ0FDaEIsQ0FBQztJQUNGLE1BQU0sSUFBQSxzQkFBTyxFQUFDLEdBQUcsRUFBRSxDQUFDLE1BQU0sQ0FBQyxTQUFTLENBQUMsS0FBSyxDQUFDLENBQUMsQ0FBQyxVQUFVLEVBQUUsQ0FBQyxDQUFDO0lBQzNELE1BQU0sSUFBQSxzQkFBTyxFQUFDLEdBQUcsRUFBRSxDQUFDLE1BQU0sQ0FBQyxTQUFTLENBQUMsTUFBTSxDQUFDLENBQUMsQ0FBQyxVQUFVLEVBQUUsQ0FBQyxDQUFDO0FBQzlELENBQUMsQ0FBQyxDQUFDO0FBRUgsSUFBSSxDQUFDLGlDQUFpQyxFQUFFLEtBQUssSUFBSSxFQUFFO0lBQ2pELElBQUksQ0FBQyxJQUFJLENBQUMsd0JBQXdCLEVBQUUsR0FBRyxFQUFFLENBQUMsQ0FBQztRQUN6QyxVQUFVLEVBQUUsSUFBSTtRQUNoQixPQUFPLEVBQUUsSUFBSSxDQUFDLEVBQUUsQ0FBQyxHQUFHLEVBQUUsQ0FBQyxDQUFDO1lBQ3RCLEtBQUssRUFBRSxFQUFFO1lBQ1QsT0FBTyxFQUFFLEtBQUs7WUFDZCxLQUFLLEVBQUUsZ0NBQWdDO1lBQ3ZDLE9BQU8sRUFBRSxJQUFJLENBQUMsRUFBRSxFQUFFO1NBQ25CLENBQUMsQ0FBQztLQUNKLENBQUMsQ0FBQyxDQUFDO0lBRUosTUFBTSxFQUFFLFNBQVMsRUFBRSxHQUFHLElBQUEscUJBQU0sRUFDMUIsOEJBQUMsMEJBQVk7UUFDWCw4QkFBQyx1QkFBYSxJQUFDLFlBQVksRUFBQyxLQUFLLEdBQUcsQ0FDdkIsQ0FDaEIsQ0FBQztJQUVGLE1BQU0sSUFBQSxzQkFBTyxFQUFDLEdBQUcsRUFBRSxDQUNqQixNQUFNLENBQUMsU0FBUyxDQUFDLGdDQUFnQyxDQUFDLENBQUMsQ0FBQyxVQUFVLEVBQUUsQ0FDakUsQ0FBQztBQUNKLENBQUMsQ0FBQyxDQUFDIiwibmFtZXMiOltdLCJzb3VyY2VzIjpbIi9Vc2Vycy9hbnRyYW4vRGVza3RvcC9DdXJyZW5jeUNvbnZlcnRlckFwcC9zcmMvX190ZXN0c19fL0V4Y2hhbmdlUmF0ZXMudGVzdC50c3giXSwic291cmNlc0NvbnRlbnQiOlsiLy8gc3JjL19fdGVzdHNfXy9FeGNoYW5nZVJhdGVzLnRlc3QudHN4XG5pbXBvcnQgUmVhY3QgZnJvbSAncmVhY3QnO1xuaW1wb3J0IHsgcmVuZGVyLCB3YWl0Rm9yIH0gZnJvbSAnQHRlc3RpbmctbGlicmFyeS9yZWFjdC1uYXRpdmUnO1xuaW1wb3J0IEV4Y2hhbmdlUmF0ZXMgZnJvbSAnLi4vY29tcG9uZW50cy9FeGNoYW5nZVJhdGVzJztcbmltcG9ydCB7IFJhdGVQcm92aWRlciB9IGZyb20gJy4uL2NvbnRleHQvUmF0ZUNvbnRleHQnO1xuXG50ZXN0KCdyZW5kZXJzIGV4Y2hhbmdlIHJhdGVzJywgYXN5bmMgKCkgPT4ge1xuICBjb25zdCByYXRlcyA9IHsgVVNEOiAxLCBFVVI6IDAuODUgfTtcbiAgY29uc3QgeyBnZXRCeVRleHQgfSA9IHJlbmRlcihcbiAgICA8UmF0ZVByb3ZpZGVyPlxuICAgICAgPEV4Y2hhbmdlUmF0ZXMgYmFzZUN1cnJlbmN5PVwiVVNEXCIgLz5cbiAgICA8L1JhdGVQcm92aWRlcj4sXG4gICk7XG4gIGF3YWl0IHdhaXRGb3IoKCkgPT4gZXhwZWN0KGdldEJ5VGV4dCgnRVVSJykpLnRvQmVUcnV0aHkoKSk7XG4gIGF3YWl0IHdhaXRGb3IoKCkgPT4gZXhwZWN0KGdldEJ5VGV4dCgnMC44NScpKS50b0JlVHJ1dGh5KCkpO1xufSk7XG5cbnRlc3QoJ2Rpc3BsYXlzIGVycm9yIG1lc3NhZ2Ugb24gZXJyb3InLCBhc3luYyAoKSA9PiB7XG4gIGplc3QubW9jaygnLi4vaG9va3MvdXNlRmV0Y2hSYXRlcycsICgpID0+ICh7XG4gICAgX19lc01vZHVsZTogdHJ1ZSxcbiAgICBkZWZhdWx0OiBqZXN0LmZuKCgpID0+ICh7XG4gICAgICByYXRlczoge30sXG4gICAgICBsb2FkaW5nOiBmYWxzZSxcbiAgICAgIGVycm9yOiAnRmFpbGVkIHRvIGZldGNoIGV4Y2hhbmdlIHJhdGVzJyxcbiAgICAgIHJlZmV0Y2g6IGplc3QuZm4oKSxcbiAgICB9KSksXG4gIH0pKTtcblxuICBjb25zdCB7IGdldEJ5VGV4dCB9ID0gcmVuZGVyKFxuICAgIDxSYXRlUHJvdmlkZXI+XG4gICAgICA8RXhjaGFuZ2VSYXRlcyBiYXNlQ3VycmVuY3k9XCJVU0RcIiAvPlxuICAgIDwvUmF0ZVByb3ZpZGVyPixcbiAgKTtcblxuICBhd2FpdCB3YWl0Rm9yKCgpID0+XG4gICAgZXhwZWN0KGdldEJ5VGV4dCgnRmFpbGVkIHRvIGZldGNoIGV4Y2hhbmdlIHJhdGVzJykpLnRvQmVUcnV0aHkoKSxcbiAgKTtcbn0pO1xuIl0sInZlcnNpb24iOjN9

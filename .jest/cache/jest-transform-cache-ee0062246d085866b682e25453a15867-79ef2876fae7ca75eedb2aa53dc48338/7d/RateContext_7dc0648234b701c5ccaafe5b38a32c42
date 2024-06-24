@@ -1,0 +1,44 @@
+4e4d3391575925f493a4befa840b8e06
+"use strict";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.useRateContext = exports.RateProvider = void 0;
+// src/context/RateContext.tsx
+const react_1 = __importStar(require("react"));
+const RateContext = (0, react_1.createContext)(undefined);
+const RateProvider = ({ children, }) => {
+    const [rates, setRates] = (0, react_1.useState)({});
+    return (react_1.default.createElement(RateContext.Provider, { value: { rates, setRates } }, children));
+};
+exports.RateProvider = RateProvider;
+const useRateContext = () => {
+    const context = (0, react_1.useContext)(RateContext);
+    if (context === undefined) {
+        throw new Error('useRateContext must be used within a RateProvider');
+    }
+    return context;
+};
+exports.useRateContext = useRateContext;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJmaWxlIjoiL1VzZXJzL2FudHJhbi9EZXNrdG9wL0N1cnJlbmN5Q29udmVydGVyQXBwL3NyYy9jb250ZXh0L1JhdGVDb250ZXh0LnRzeCIsIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQUFBLDhCQUE4QjtBQUM5QiwrQ0FBOEU7QUFPOUUsTUFBTSxXQUFXLEdBQUcsSUFBQSxxQkFBYSxFQUErQixTQUFTLENBQUMsQ0FBQztBQUVwRSxNQUFNLFlBQVksR0FBc0MsQ0FBQyxFQUM5RCxRQUFRLEdBQ1QsRUFBRSxFQUFFO0lBQ0gsTUFBTSxDQUFDLEtBQUssRUFBRSxRQUFRLENBQUMsR0FBRyxJQUFBLGdCQUFRLEVBQXlCLEVBQUUsQ0FBQyxDQUFDO0lBRS9ELE9BQU8sQ0FDTCw4QkFBQyxXQUFXLENBQUMsUUFBUSxJQUFDLEtBQUssRUFBRSxFQUFFLEtBQUssRUFBRSxRQUFRLEVBQUUsSUFDN0MsUUFBUSxDQUNZLENBQ3hCLENBQUM7QUFDSixDQUFDLENBQUM7QUFWVyxRQUFBLFlBQVksZ0JBVXZCO0FBRUssTUFBTSxjQUFjLEdBQUcsR0FBRyxFQUFFO0lBQ2pDLE1BQU0sT0FBTyxHQUFHLElBQUEsa0JBQVUsRUFBQyxXQUFXLENBQUMsQ0FBQztJQUN4QyxJQUFJLE9BQU8sS0FBSyxTQUFTLEVBQUUsQ0FBQztRQUMxQixNQUFNLElBQUksS0FBSyxDQUFDLG1EQUFtRCxDQUFDLENBQUM7SUFDdkUsQ0FBQztJQUNELE9BQU8sT0FBTyxDQUFDO0FBQ2pCLENBQUMsQ0FBQztBQU5XLFFBQUEsY0FBYyxrQkFNekIiLCJuYW1lcyI6W10sInNvdXJjZXMiOlsiL1VzZXJzL2FudHJhbi9EZXNrdG9wL0N1cnJlbmN5Q29udmVydGVyQXBwL3NyYy9jb250ZXh0L1JhdGVDb250ZXh0LnRzeCJdLCJzb3VyY2VzQ29udGVudCI6WyIvLyBzcmMvY29udGV4dC9SYXRlQ29udGV4dC50c3hcbmltcG9ydCBSZWFjdCwgeyBjcmVhdGVDb250ZXh0LCB1c2VDb250ZXh0LCB1c2VTdGF0ZSwgUmVhY3ROb2RlIH0gZnJvbSAncmVhY3QnO1xuXG5pbnRlcmZhY2UgUmF0ZUNvbnRleHRQcm9wcyB7XG4gIHJhdGVzOiBSZWNvcmQ8c3RyaW5nLCBudW1iZXI+O1xuICBzZXRSYXRlczogUmVhY3QuRGlzcGF0Y2g8UmVhY3QuU2V0U3RhdGVBY3Rpb248UmVjb3JkPHN0cmluZywgbnVtYmVyPj4+O1xufVxuXG5jb25zdCBSYXRlQ29udGV4dCA9IGNyZWF0ZUNvbnRleHQ8UmF0ZUNvbnRleHRQcm9wcyB8IHVuZGVmaW5lZD4odW5kZWZpbmVkKTtcblxuZXhwb3J0IGNvbnN0IFJhdGVQcm92aWRlcjogUmVhY3QuRkM8eyBjaGlsZHJlbjogUmVhY3ROb2RlIH0+ID0gKHtcbiAgY2hpbGRyZW4sXG59KSA9PiB7XG4gIGNvbnN0IFtyYXRlcywgc2V0UmF0ZXNdID0gdXNlU3RhdGU8UmVjb3JkPHN0cmluZywgbnVtYmVyPj4oe30pO1xuXG4gIHJldHVybiAoXG4gICAgPFJhdGVDb250ZXh0LlByb3ZpZGVyIHZhbHVlPXt7IHJhdGVzLCBzZXRSYXRlcyB9fT5cbiAgICAgIHtjaGlsZHJlbn1cbiAgICA8L1JhdGVDb250ZXh0LlByb3ZpZGVyPlxuICApO1xufTtcblxuZXhwb3J0IGNvbnN0IHVzZVJhdGVDb250ZXh0ID0gKCkgPT4ge1xuICBjb25zdCBjb250ZXh0ID0gdXNlQ29udGV4dChSYXRlQ29udGV4dCk7XG4gIGlmIChjb250ZXh0ID09PSB1bmRlZmluZWQpIHtcbiAgICB0aHJvdyBuZXcgRXJyb3IoJ3VzZVJhdGVDb250ZXh0IG11c3QgYmUgdXNlZCB3aXRoaW4gYSBSYXRlUHJvdmlkZXInKTtcbiAgfVxuICByZXR1cm4gY29udGV4dDtcbn07XG4iXSwidmVyc2lvbiI6M30=

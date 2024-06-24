@@ -1,0 +1,17 @@
+82bc177a854d349e7001b91a4dfb9749
+"use strict";
+
+var _NativeSafeAreaContex, _NativeSafeAreaContex2, _NativeSafeAreaContex3;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.initialWindowSafeAreaInsets = exports.initialWindowMetrics = void 0;
+var _NativeSafeAreaContext = _interopRequireDefault(require("./specs/NativeSafeAreaContext"));
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : {
+    default: obj
+  };
+}
+var initialWindowMetrics = exports.initialWindowMetrics = (_NativeSafeAreaContex = (_NativeSafeAreaContex2 = _NativeSafeAreaContext.default) == null ? void 0 : _NativeSafeAreaContex2.getConstants == null ? void 0 : (_NativeSafeAreaContex3 = _NativeSafeAreaContex2.getConstants()) == null ? void 0 : _NativeSafeAreaContex3.initialWindowMetrics) != null ? _NativeSafeAreaContex : null;
+var initialWindowSafeAreaInsets = exports.initialWindowSafeAreaInsets = initialWindowMetrics == null ? void 0 : initialWindowMetrics.insets;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6WyJfTmF0aXZlU2FmZUFyZWFDb250ZXh0IiwiX2ludGVyb3BSZXF1aXJlRGVmYXVsdCIsInJlcXVpcmUiLCJvYmoiLCJfX2VzTW9kdWxlIiwiZGVmYXVsdCIsImluaXRpYWxXaW5kb3dNZXRyaWNzIiwiZXhwb3J0cyIsIl9OYXRpdmVTYWZlQXJlYUNvbnRleCIsIl9OYXRpdmVTYWZlQXJlYUNvbnRleDIiLCJnZXRDb25zdGFudHMiLCJfTmF0aXZlU2FmZUFyZWFDb250ZXgzIiwiaW5pdGlhbFdpbmRvd1NhZmVBcmVhSW5zZXRzIiwiaW5zZXRzIl0sInNvdXJjZXMiOlsiLi4vLi4vc3JjL0luaXRpYWxXaW5kb3cubmF0aXZlLnRzIl0sInNvdXJjZXNDb250ZW50IjpbbnVsbF0sIm1hcHBpbmdzIjoiOzs7Ozs7O0FBQ0EsSUFBQUEsc0JBQUEsR0FBQUMsc0JBQUEsQ0FBQUMsT0FBQTtBQUFrRSxTQUFBRCx1QkFBQUUsR0FBQTtFQUFBLE9BQUFBLEdBQUEsSUFBQUEsR0FBQSxDQUFBQyxVQUFBLEdBQUFELEdBQUE7SUFBQUUsT0FBQSxFQUFBRjtFQUFBO0FBQUE7QUFFM0QsSUFBTUcsb0JBQW9CLEdBQUFDLE9BQUEsQ0FBQUQsb0JBQUEsSUFBQUUscUJBQUEsSUFBQUMsc0JBQUEsR0FBSVQsc0JBQUEsQ0FBQUssT0FBcUIscUJBQXJCSSxzQkFBQSxDQUF1QkMsWUFBWSxxQkFBQUMsc0JBQUEsR0FBbkNGLHNCQUFBLENBQXVCQyxZQUFZLENBQUcsQ0FBQyxxQkFBdkNDLHNCQUFBLENBQ2pDTCxvQkFBb0IsWUFBQUUscUJBQUEsR0FBSSxJQUF1QjtBQUs1QyxJQUFNSSwyQkFBMkIsR0FBQUwsT0FBQSxDQUFBSywyQkFBQSxHQUFHTixvQkFBb0Isb0JBQXBCQSxvQkFBb0IsQ0FBRU8sTUFBTSIsImlnbm9yZUxpc3QiOltdfQ==

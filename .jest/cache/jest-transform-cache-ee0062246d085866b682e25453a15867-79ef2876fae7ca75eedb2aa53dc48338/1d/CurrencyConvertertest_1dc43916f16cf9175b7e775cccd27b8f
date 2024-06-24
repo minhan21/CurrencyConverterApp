@@ -1,0 +1,26 @@
+aba933613d94dd0e8f46a0c3652a3ff8
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+// src/__tests__/CurrencyConverter.test.tsx
+const react_1 = __importDefault(require("react"));
+const react_native_1 = require("@testing-library/react-native");
+const CurrencyConverter_1 = __importDefault(require("../components/CurrencyConverter"));
+test('converts currency correctly', async () => {
+    const rates = { USD: 1, EUR: 0.85 };
+    const { getByText, getByLabelText } = (0, react_native_1.render)(react_1.default.createElement(CurrencyConverter_1.default, { rates: rates }));
+    // Select base and target currencies
+    const baseCurrencyPicker = getByLabelText('Select base currency');
+    const targetCurrencyPicker = getByLabelText('Select target currency');
+    (0, react_native_1.fireEvent)(baseCurrencyPicker, 'valueChange', 'USD');
+    (0, react_native_1.fireEvent)(targetCurrencyPicker, 'valueChange', 'EUR');
+    // Enter amount and check conversion
+    const amountInput = getByLabelText('Amount');
+    react_native_1.fireEvent.changeText(amountInput, '100');
+    await (0, react_native_1.waitFor)(() => {
+        expect(getByText('100 USD = 85.00 EUR')).toBeTruthy();
+    });
+});
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJmaWxlIjoiL1VzZXJzL2FudHJhbi9EZXNrdG9wL0N1cnJlbmN5Q29udmVydGVyQXBwL3NyYy9fX3Rlc3RzX18vQ3VycmVuY3lDb252ZXJ0ZXIudGVzdC50c3giLCJtYXBwaW5ncyI6Ijs7Ozs7QUFBQSwyQ0FBMkM7QUFDM0Msa0RBQTBCO0FBQzFCLGdFQUEyRTtBQUMzRSx3RkFBZ0U7QUFFaEUsSUFBSSxDQUFDLDZCQUE2QixFQUFFLEtBQUssSUFBSSxFQUFFO0lBQzdDLE1BQU0sS0FBSyxHQUFHLEVBQUUsR0FBRyxFQUFFLENBQUMsRUFBRSxHQUFHLEVBQUUsSUFBSSxFQUFFLENBQUM7SUFDcEMsTUFBTSxFQUFFLFNBQVMsRUFBRSxjQUFjLEVBQUUsR0FBRyxJQUFBLHFCQUFNLEVBQzFDLDhCQUFDLDJCQUFpQixJQUFDLEtBQUssRUFBRSxLQUFLLEdBQUksQ0FDcEMsQ0FBQztJQUVGLG9DQUFvQztJQUNwQyxNQUFNLGtCQUFrQixHQUFHLGNBQWMsQ0FBQyxzQkFBc0IsQ0FBQyxDQUFDO0lBQ2xFLE1BQU0sb0JBQW9CLEdBQUcsY0FBYyxDQUFDLHdCQUF3QixDQUFDLENBQUM7SUFFdEUsSUFBQSx3QkFBUyxFQUFDLGtCQUFrQixFQUFFLGFBQWEsRUFBRSxLQUFLLENBQUMsQ0FBQztJQUNwRCxJQUFBLHdCQUFTLEVBQUMsb0JBQW9CLEVBQUUsYUFBYSxFQUFFLEtBQUssQ0FBQyxDQUFDO0lBRXRELG9DQUFvQztJQUNwQyxNQUFNLFdBQVcsR0FBRyxjQUFjLENBQUMsUUFBUSxDQUFDLENBQUM7SUFDN0Msd0JBQVMsQ0FBQyxVQUFVLENBQUMsV0FBVyxFQUFFLEtBQUssQ0FBQyxDQUFDO0lBRXpDLE1BQU0sSUFBQSxzQkFBTyxFQUFDLEdBQUcsRUFBRTtRQUNqQixNQUFNLENBQUMsU0FBUyxDQUFDLHFCQUFxQixDQUFDLENBQUMsQ0FBQyxVQUFVLEVBQUUsQ0FBQztJQUN4RCxDQUFDLENBQUMsQ0FBQztBQUNMLENBQUMsQ0FBQyxDQUFDIiwibmFtZXMiOltdLCJzb3VyY2VzIjpbIi9Vc2Vycy9hbnRyYW4vRGVza3RvcC9DdXJyZW5jeUNvbnZlcnRlckFwcC9zcmMvX190ZXN0c19fL0N1cnJlbmN5Q29udmVydGVyLnRlc3QudHN4Il0sInNvdXJjZXNDb250ZW50IjpbIi8vIHNyYy9fX3Rlc3RzX18vQ3VycmVuY3lDb252ZXJ0ZXIudGVzdC50c3hcbmltcG9ydCBSZWFjdCBmcm9tICdyZWFjdCc7XG5pbXBvcnQgeyByZW5kZXIsIGZpcmVFdmVudCwgd2FpdEZvciB9IGZyb20gJ0B0ZXN0aW5nLWxpYnJhcnkvcmVhY3QtbmF0aXZlJztcbmltcG9ydCBDdXJyZW5jeUNvbnZlcnRlciBmcm9tICcuLi9jb21wb25lbnRzL0N1cnJlbmN5Q29udmVydGVyJztcblxudGVzdCgnY29udmVydHMgY3VycmVuY3kgY29ycmVjdGx5JywgYXN5bmMgKCkgPT4ge1xuICBjb25zdCByYXRlcyA9IHsgVVNEOiAxLCBFVVI6IDAuODUgfTtcbiAgY29uc3QgeyBnZXRCeVRleHQsIGdldEJ5TGFiZWxUZXh0IH0gPSByZW5kZXIoXG4gICAgPEN1cnJlbmN5Q29udmVydGVyIHJhdGVzPXtyYXRlc30gLz4sXG4gICk7XG5cbiAgLy8gU2VsZWN0IGJhc2UgYW5kIHRhcmdldCBjdXJyZW5jaWVzXG4gIGNvbnN0IGJhc2VDdXJyZW5jeVBpY2tlciA9IGdldEJ5TGFiZWxUZXh0KCdTZWxlY3QgYmFzZSBjdXJyZW5jeScpO1xuICBjb25zdCB0YXJnZXRDdXJyZW5jeVBpY2tlciA9IGdldEJ5TGFiZWxUZXh0KCdTZWxlY3QgdGFyZ2V0IGN1cnJlbmN5Jyk7XG5cbiAgZmlyZUV2ZW50KGJhc2VDdXJyZW5jeVBpY2tlciwgJ3ZhbHVlQ2hhbmdlJywgJ1VTRCcpO1xuICBmaXJlRXZlbnQodGFyZ2V0Q3VycmVuY3lQaWNrZXIsICd2YWx1ZUNoYW5nZScsICdFVVInKTtcblxuICAvLyBFbnRlciBhbW91bnQgYW5kIGNoZWNrIGNvbnZlcnNpb25cbiAgY29uc3QgYW1vdW50SW5wdXQgPSBnZXRCeUxhYmVsVGV4dCgnQW1vdW50Jyk7XG4gIGZpcmVFdmVudC5jaGFuZ2VUZXh0KGFtb3VudElucHV0LCAnMTAwJyk7XG5cbiAgYXdhaXQgd2FpdEZvcigoKSA9PiB7XG4gICAgZXhwZWN0KGdldEJ5VGV4dCgnMTAwIFVTRCA9IDg1LjAwIEVVUicpKS50b0JlVHJ1dGh5KCk7XG4gIH0pO1xufSk7XG4iXSwidmVyc2lvbiI6M30=
