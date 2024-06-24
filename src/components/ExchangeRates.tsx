@@ -1,6 +1,6 @@
 // src/components/ExchangeRates.tsx
 import React, { useEffect, memo } from 'react';
-import { View, StyleSheet, FlatList, ImageBackground } from 'react-native';
+import { View, StyleSheet, FlatList } from 'react-native';
 import {
   useTheme,
   Text,
@@ -55,9 +55,9 @@ const ExchangeRates: React.FC<ExchangeRatesProps> = ({ baseCurrency }) => {
       <View style={styles.errorContainer}>
         <Text
           style={{ color: colors.error, marginBottom: 10 }}
-          accessibilityLabel="Error fetching exchange rates"
+          accessibilityLabel="Failed to fetch exchange rates"
         >
-          {error}
+          Failed to fetch exchange rates
         </Text>
         <Button
           icon="refresh"

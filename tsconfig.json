@@ -9,6 +9,9 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true
   },
+  "paths": {
+    "@env/*": ["src/env/*"]
+  },
   "include": [
     "src",
     "jest.setup.js"

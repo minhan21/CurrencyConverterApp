@@ -15,9 +15,7 @@ const useFetchRates = (baseCurrency: string) => {
       setRates(data.rates);
       setLoading(false);
     } catch (err: any) {
-      setError(
-        err.message || 'An error occurred while fetching exchange rates.',
-      );
+      setError(err.message || 'Failed to fetch exchange rates.');
       setLoading(false);
     }
   }, [baseCurrency]);

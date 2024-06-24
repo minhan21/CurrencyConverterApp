@@ -32,6 +32,8 @@ const CurrencyConverter: React.FC<CurrencyConverterProps> = ({ rates }) => {
         const result =
           (parseFloat(value) / rates[baseCurrency]) * rates[targetCurrency];
         setConvertedAmount(roundToTwoDecimals(result).toString());
+      } else {
+        setConvertedAmount(null); // Handle edge case if rates are not available
       }
     },
     [baseCurrency, targetCurrency, rates],
@@ -39,20 +41,25 @@ const CurrencyConverter: React.FC<CurrencyConverterProps> = ({ rates }) => {
 
   return (
     <View style={commonStyles.container}>
-      <RNPickerSelect
-        onValueChange={(value) => setBaseCurrency(value)}
-        items={currencyItems}
-        placeholder={{ label: 'Select base currency', value: null }}
-        style={pickerSelectStyles()}
-      />
-      <RNPickerSelect
-        onValueChange={(value) => setTargetCurrency(value)}
-        items={currencyItems}
-        placeholder={{ label: 'Select target currency', value: null }}
-        style={pickerSelectStyles()}
-      />
+      <View accessible={true} accessibilityLabel="Select base currency">
+        <RNPickerSelect
+          onValueChange={(value) => setBaseCurrency(value)}
+          items={currencyItems}
+          placeholder={{ label: 'Select base currency', value: null }}
+          style={pickerSelectStyles()}
+        />
+      </View>
+      <View accessible={true} accessibilityLabel="Select target currency">
+        <RNPickerSelect
+          onValueChange={(value) => setTargetCurrency(value)}
+          items={currencyItems}
+          placeholder={{ label: 'Select target currency', value: null }}
+          style={pickerSelectStyles()}
+        />
+      </View>
       <TextInput
         mode="outlined"
+        accessibilityLabel="Amount"
         label="Amount"
         value={amount}
         keyboardType="numeric"
@@ -66,22 +73,6 @@ const CurrencyConverter: React.FC<CurrencyConverterProps> = ({ rates }) => {
       )}
     </View>
   );
-};
-
-// Custom PropTypes validator for the rates prop
-const ratesPropType = (props: any, propName: string, componentName: string) => {
-  const prop = props[propName];
-  if (typeof prop !== 'object' || prop === null) {
-    return new Error(`${propName} in ${componentName} is not an object`);
-  }
-
-  for (const key in prop) {
-    if (typeof prop[key] !== 'number') {
-      return new Error(
-        `Invalid prop ${propName} in ${componentName}: key "${key}" must be a number`,
-      );
-    }
-  }
 };
 
 const pickerSelectStyles = () => ({
